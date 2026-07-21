@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Catalog from './components/Catalog';
@@ -11,10 +11,18 @@ import Commercial from './components/Commercial';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import CallPopup from './components/CallPopup';
+import EastonPage from './pages/EastonPage';
 import { DEFAULT_FILTER, PROJECTS } from './data/projects';
 import { filterProjects, nameOk, phoneOk } from './utils/format';
 
+function getRoute() {
+  const hash = window.location.hash.replace(/^#\/?/, '');
+  if (hash === 'easton' || hash.startsWith('easton')) return 'easton';
+  return 'home';
+}
+
 export default function App() {
+  const [route, setRoute] = useState(getRoute);
   const [openMenu, setOpenMenu] = useState(null);
   const [headerCity, setHeaderCity] = useState('Актау');
   const [langCur, setLangCur] = useState('RU');
@@ -35,6 +43,27 @@ export default function App() {
   const [consultPhone, setConsultPhone] = useState('');
   const [consultCity, setConsultCity] = useState('Актау');
   const [consultState, setConsultState] = useState('idle');
+
+  useEffect(() => {
+    const onHash = () => {
+      setRoute(getRoute());
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
+  const goHome = useCallback(() => {
+    window.location.hash = '';
+    setRoute('home');
+    window.scrollTo(0, 0);
+  }, []);
+
+  const goEaston = useCallback(() => {
+    window.location.hash = '/easton';
+    setRoute('easton');
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggleMenu = useCallback((key) => {
     setOpenMenu((prev) => (prev === key ? null : key));
@@ -104,8 +133,35 @@ export default function App() {
     setTimeout(() => setConsultState('success'), 900);
   }, [consultName, consultPhone]);
 
+  const onOpenProject = useCallback((p) => {
+    if (p.name === 'Easton' || p.href === '#/easton') {
+      goEaston();
+    }
+  }, [goEaston]);
+
+  const callPopup = (
+    <CallPopup
+      call={{
+        ...call,
+        setName: (name) => setCall((prev) => ({ ...prev, name })),
+        setPhone: (phone) => setCall((prev) => ({ ...prev, phone })),
+      }}
+      onClose={closeCall}
+      onSubmit={submitCall}
+    />
+  );
+
+  if (route === 'easton') {
+    return (
+      <>
+        <EastonPage onBack={goHome} onOpenCall={openCall} />
+        {callPopup}
+      </>
+    );
+  }
+
   return (
-    <div className="page">
+    <>
       <Header
         showTopBar
         headerCity={headerCity}
@@ -116,61 +172,56 @@ export default function App() {
         toggleMenu={toggleMenu}
         onOpenCall={openCall}
       />
-      <Hero onOpenCall={openCall} />
-      <Catalog
-        filter={filter}
-        setFilter={setFilter}
-        openMenu={openMenu}
-        toggleMenu={toggleMenu}
-        applyFilter={applyFilter}
-        resetFilter={resetFilter}
-        filtered={filtered}
-      />
-      <Featured activeTab={activeTab} setActiveTab={setActiveTab} />
-      <Paida onOpenCall={openCall} />
-      <Calculator
-        calcMode={calcMode}
-        setCalcMode={setCalcMode}
-        price={price}
-        setPrice={setPrice}
-        down={down}
-        setDown={setDown}
-        termY={termY}
-        setTermY={setTermY}
-        rate={rate}
-        setRate={setRate}
-        termM={termM}
-        setTermM={setTermM}
-        leadName={leadName}
-        setLeadName={setLeadName}
-        leadPhone={leadPhone}
-        setLeadPhone={setLeadPhone}
-        leadState={leadState}
-        submitLead={submitLead}
-      />
-      <Banks />
-      <Consultation
-        consultName={consultName}
-        setConsultName={setConsultName}
-        consultPhone={consultPhone}
-        setConsultPhone={setConsultPhone}
-        consultCity={consultCity}
-        setConsultCity={setConsultCity}
-        consultState={consultState}
-        submitConsult={submitConsult}
-      />
-      <Commercial />
-      <Contacts />
-      <Footer />
-      <CallPopup
-        call={{
-          ...call,
-          setName: (name) => setCall((prev) => ({ ...prev, name })),
-          setPhone: (phone) => setCall((prev) => ({ ...prev, phone })),
-        }}
-        onClose={closeCall}
-        onSubmit={submitCall}
-      />
-    </div>
+      <div className="page">
+        <Hero onOpenCall={openCall} />
+        <Catalog
+          filter={filter}
+          setFilter={setFilter}
+          openMenu={openMenu}
+          toggleMenu={toggleMenu}
+          applyFilter={applyFilter}
+          resetFilter={resetFilter}
+          filtered={filtered}
+          onOpenProject={onOpenProject}
+        />
+        <Featured activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Paida onOpenCall={openCall} />
+        <Calculator
+          calcMode={calcMode}
+          setCalcMode={setCalcMode}
+          price={price}
+          setPrice={setPrice}
+          down={down}
+          setDown={setDown}
+          termY={termY}
+          setTermY={setTermY}
+          rate={rate}
+          setRate={setRate}
+          termM={termM}
+          setTermM={setTermM}
+          leadName={leadName}
+          setLeadName={setLeadName}
+          leadPhone={leadPhone}
+          setLeadPhone={setLeadPhone}
+          leadState={leadState}
+          submitLead={submitLead}
+        />
+        <Banks />
+        <Consultation
+          consultName={consultName}
+          setConsultName={setConsultName}
+          consultPhone={consultPhone}
+          setConsultPhone={setConsultPhone}
+          consultCity={consultCity}
+          setConsultCity={setConsultCity}
+          consultState={consultState}
+          submitConsult={submitConsult}
+        />
+        <Commercial />
+        <Contacts />
+        <Footer />
+      </div>
+      {callPopup}
+    </>
   );
 }

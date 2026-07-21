@@ -55,6 +55,21 @@ export const PROJECTS = [
     image: '/images/project-orda-palace.jpg',
     meta: ['Усть-Каменогорск', 'Центр', '5 мин'],
   },
+  {
+    id: 5,
+    name: 'Easton',
+    city: 'Усть-Каменогорск',
+    klass: 'Бизнес',
+    classFull: 'Бизнес-класс',
+    term: 'IV квартал 2026 года',
+    termBadge: 'IV квартал 2026',
+    rooms: [1, 2, 3],
+    floors: 9,
+    price: 18500000,
+    image: '/images/project-easton.jpg',
+    meta: ['Усть-Каменогорск', 'Центр', 'Есенберлина'],
+    href: '#/easton',
+  },
 ];
 
 export const FEATURED_DATA = {
@@ -132,7 +147,7 @@ export const CONTACTS = [
 ];
 
 export const FOOTER_COLS = [
-  { title: 'Проекты', items: ['Central Park', 'Avenue Park', 'Adal Town', 'Orda Palace'] },
+  { title: 'Проекты', items: ['Central Park', 'Avenue Park', 'Adal Town', 'Orda Palace', 'Easton'] },
   { title: 'Компания', items: ['О нас', 'Вакансии', 'Новости'] },
   { title: 'Поддержка', items: ['Контакты', 'График работы'] },
   { title: 'Офисы продаж', items: ['Актау', 'Актобе', 'Усть-Каменогорск'] },

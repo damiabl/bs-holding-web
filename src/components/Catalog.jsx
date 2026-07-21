@@ -2,9 +2,36 @@ import Dropdown from './Dropdown';
 import { FILTER_SPEC } from '../data/projects';
 import { fmt } from '../utils/format';
 
-function ProjectCard({ p }) {
+function ProjectCard({ p, onOpen }) {
+  const clickable = Boolean(p.href || onOpen);
+  const Wrapper = clickable ? 'button' : 'div';
+  const wrapperProps = clickable
+    ? {
+        type: 'button',
+        onClick: () => {
+          if (p.href?.startsWith('#/')) {
+            window.location.hash = p.href.slice(1);
+          }
+          onOpen?.(p);
+        },
+        style: {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 20,
+          textAlign: 'left',
+          background: 'none',
+          border: 'none',
+          padding: 0,
+          cursor: 'pointer',
+          color: 'inherit',
+          font: 'inherit',
+          width: '100%',
+        },
+      }
+    : { style: { display: 'flex', flexDirection: 'column', gap: 20 } };
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <Wrapper {...wrapperProps}>
       <div
         style={{
           position: 'relative',
@@ -47,7 +74,7 @@ function ProjectCard({ p }) {
         </div>
       </div>
       <div style={{ fontSize: 16, fontWeight: 500 }}>от {fmt(p.price)} ₸</div>
-    </div>
+    </Wrapper>
   );
 }
 
@@ -59,6 +86,7 @@ export default function Catalog({
   applyFilter,
   resetFilter,
   filtered,
+  onOpenProject,
 }) {
   return (
     <>
@@ -112,7 +140,7 @@ export default function Catalog({
             }}
           >
             {filtered.map((p) => (
-              <ProjectCard key={p.id} p={p} />
+              <ProjectCard key={p.id} p={p} onOpen={onOpenProject} />
             ))}
           </div>
         ) : (
