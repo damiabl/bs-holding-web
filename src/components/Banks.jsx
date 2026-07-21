@@ -1,8 +1,8 @@
 const BANKS = [
-  { name: 'FREEDOM BANK', logo: '/images/bank-freedom.png' },
-  { name: 'Altyn Bank', logo: '/images/bank-altyn.png' },
-  { name: 'bcc.kz', logo: '/images/bank-bcc.png' },
-  { name: 'ОТБАСЫ БАНК', logo: '/images/bank-otbasy.png' },
+  { name: 'FREEDOM BANK', logo: '/images/bank-freedom.webp' },
+  { name: 'Altyn Bank', logo: '/images/bank-altyn.webp' },
+  { name: 'bcc.kz', logo: '/images/bank-bcc.webp' },
+  { name: 'ОТБАСЫ БАНК', logo: '/images/bank-otbasy.webp' },
 ];
 
 export default function Banks() {

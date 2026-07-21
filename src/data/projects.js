@@ -10,7 +10,7 @@ export const PROJECTS = [
     rooms: [2, 3],
     floors: 12,
     price: 22534000,
-    image: '/images/project-central-park.jpg',
+    image: '/images/project-central-park.webp',
     meta: ['Актау', 'Море', '8 мин'],
   },
   {
@@ -24,7 +24,7 @@ export const PROJECTS = [
     rooms: [1, 2, 3],
     floors: 10,
     price: 17001000,
-    image: '/images/project-avenue-park.jpg',
+    image: '/images/project-avenue-park.webp',
     meta: ['Актобе', 'Парк', '8 мин'],
   },
   {
@@ -38,7 +38,7 @@ export const PROJECTS = [
     rooms: [1, 2],
     floors: 9,
     price: 8316000,
-    image: '/images/project-adal-town.jpg',
+    image: '/images/project-adal-town.webp',
     meta: ['Актау', 'Море', '10 мин'],
   },
   {
@@ -52,7 +52,7 @@ export const PROJECTS = [
     rooms: [2, 3, 4],
     floors: 14,
     price: 18200000,
-    image: '/images/project-orda-palace.jpg',
+    image: '/images/project-orda-palace.webp',
     meta: ['Усть-Каменогорск', 'Центр', '5 мин'],
   },
   {
@@ -66,7 +66,7 @@ export const PROJECTS = [
     rooms: [1, 2, 3],
     floors: 9,
     price: 18500000,
-    image: '/images/project-easton.jpg',
+    image: '/images/project-easton.webp',
     meta: ['Усть-Каменогорск', 'Центр', 'Есенберлина'],
     href: '#/easton',
   },
@@ -79,7 +79,7 @@ export const FEATURED_DATA = {
     termBadge: 'Сдан',
     price: 22534000,
     location: 'г. Актау · первая береговая линия',
-    image: '/images/project-central-park.jpg',
+    image: '/images/project-central-park.webp',
     desc: [
       'Жилой комплекс бизнес-класса в престижном районе Актау с видом на Каспийское море.',
       '5 минут до набережной и городского пляжа, 10 минут до центра города.',
@@ -93,7 +93,7 @@ export const FEATURED_DATA = {
     termBadge: 'I квартал 2026',
     price: 17001000,
     location: 'г. Актобе · Парк Первого Президента',
-    image: '/images/featured-avenue-park.jpg',
+    image: '/images/featured-avenue-park.webp',
     desc: [
       'Жилой комплекс бизнес-класса в самом сердце города Актобе на пересечении двух континентов.',
       'В 8 минутах от Парка Первого Президента, в 5 минутах от мечети Нур Гасыр, в 2 минутах от реки Илек.',
@@ -107,7 +107,7 @@ export const FEATURED_DATA = {
     termBadge: 'II квартал 2026',
     price: 8316000,
     location: 'г. Актау · развивающийся район',
-    image: '/images/project-adal-town.jpg',
+    image: '/images/project-adal-town.webp',
     desc: [
       'Современный комфортный жилой комплекс для молодых семей в развивающемся районе Актау.',
       'Школы, детские сады и торговые центры в шаговой доступности.',
@@ -124,19 +124,19 @@ export const COMMERCIAL = [
     title: 'Парковочное место',
     from: 'от 1 500 000 ₸',
     meta: ['от 10 кв.м.', 'электрозарядка'],
-    image: '/images/commercial-parking.jpg',
+    image: '/images/commercial-parking.webp',
   },
   {
     title: 'Складское помещение',
     from: 'от 800 000 ₸',
     meta: ['от 20 кв.м.', 'огнезащита'],
-    image: '/images/commercial-storage.jpg',
+    image: '/images/commercial-storage.webp',
   },
   {
     title: 'Коммерческое помещение',
     from: 'от 25 000 000 ₸',
     meta: ['от 150 кв.м.', 'отдельный вход'],
-    image: '/images/commercial-space.jpg',
+    image: '/images/commercial-space.webp',
   },
 ];
 

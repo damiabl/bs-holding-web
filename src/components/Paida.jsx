@@ -14,7 +14,7 @@ export default function Paida({ onOpenCall }) {
         }}
       >
         <img
-          src="/images/paida-family.jpg"
+          src="/images/paida-family.webp"
           alt="Семья в квартире BS Пайда"
           style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
         />

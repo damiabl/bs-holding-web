@@ -14,7 +14,7 @@ export default function Hero({ onOpenCall }) {
         }}
       >
         <img
-          src="/images/hero-building.jpg"
+          src="/images/hero-building.webp"
           alt="BS Holding — флагманский жилой комплекс"
           style={{
             position: 'absolute',
@@ -65,7 +65,7 @@ export default function Hero({ onOpenCall }) {
         }}
       >
         <img
-          src="/images/paida-card-ref.png"
+          src="/images/paida-card-ref.webp"
           alt="BS Пайда — выгода до 9.5% при покупке в рассрочку. Партнёры: Freedom Bank, Altyn Bank, bcc.kz, Отбасы Банк. Ваша ипотека одобрена!"
           style={{
             display: 'block',

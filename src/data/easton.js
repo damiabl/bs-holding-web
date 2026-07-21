@@ -9,7 +9,7 @@ export const EASTON = {
     { label: 'Планировки', href: '#easton-apartments' },
   ],
   hero: {
-    image: '/images/easton/hero-clean.jpg',
+    image: '/images/easton/hero-clean.webp',
     title: 'EASTON',
     location: 'г. Усть-Каменогорск',
   },
@@ -26,9 +26,9 @@ export const EASTON = {
     title: 'Созданный по стандартам BS, комплекс объединяет:',
     text: 'Easton символизирует новый этап городской среды - пространство, где комфорт, эстетика и надёжность формируют современное лицо Усть-Каменогорска.',
     cards: [
-      { image: '/images/easton/features-main.jpg', title: 'Современный архитектурный дизайн', tall: true },
-      { image: '/images/easton/features-top.jpg', title: 'Продуманную инфраструктуру' },
-      { image: '/images/easton/features-bottom.jpg', title: 'Высокое качество строительства' },
+      { image: '/images/easton/features-main.webp', title: 'Современный архитектурный дизайн', tall: true },
+      { image: '/images/easton/features-top.webp', title: 'Продуманную инфраструктуру' },
+      { image: '/images/easton/features-bottom.webp', title: 'Высокое качество строительства' },
     ],
   },
   location: {
@@ -36,9 +36,9 @@ export const EASTON = {
     label: 'Локация',
     title: 'Пересечение улиц Есенберлина\nи Сәтпаева - новое сердце города',
     cards: [
-      { image: null, title: 'CarCity', solid: true, icon: '/images/easton/icon-car.png' },
-      { image: '/images/easton/location-theatre.jpg', title: 'Театр', icon: '/images/easton/icon-theatre.png' },
-      { image: '/images/easton/location-park.jpg', title: 'Парк Нурлы Жол', icon: '/images/easton/icon-park.png' },
+      { image: null, title: 'CarCity', solid: true, icon: '/images/easton/icon-car.webp' },
+      { image: '/images/easton/location-theatre.webp', title: 'Театр', icon: '/images/easton/icon-theatre.webp' },
+      { image: '/images/easton/location-park.webp', title: 'Парк Нурлы Жол', icon: '/images/easton/icon-park.webp' },
     ],
     notes: [
       'Инфраструктура тщательно продумана: в шаговой доступности всё необходимое для жизни, отдыха и развития.',
@@ -49,7 +49,7 @@ export const EASTON = {
     id: 'easton-architecture',
     label: 'Архитектура и материалы',
     title: 'Архитектура Easton отражает индивидуальность и современное видение',
-    image: '/images/easton/architecture.jpg',
+    image: '/images/easton/architecture.webp',
     points: [
       'Монолитный каркас обеспечивает прочность и долговечность всего жилого здания.',
       'Фасады облицованы: натуральным камнем Limestone, благородным гранитом, алюминиевыми композитными панелями (АКП).',
@@ -61,21 +61,21 @@ export const EASTON = {
   yard: {
     label: 'Дворовое пространство',
     title: 'Двор спроектирован на стилобате, полностью исключающем движение автомобилей. Это гарантирует тишину, безопасность и уютную атмосферу',
-    image: '/images/easton/yard.jpg',
+    image: '/images/easton/yard.webp',
   },
   playground: {
     title: 'Cовременная игровая площадка',
     text: 'Двор - не просто пространство между домами, а гармоничная среда для отдыха, общения и прогулок всей семьёй. Каждая деталь создана с учётом безопасности и комфорта.',
-    image: '/images/easton/playground.jpg',
+    image: '/images/easton/playground.webp',
     cta: 'Получить консультацию',
   },
   kids: {
     label: 'Особое внимание - детям',
     gallery: [
-      { image: '/images/easton/kids-1.jpg', title: 'Безопасные\nматериалы' },
-      { image: '/images/easton/kids-2.jpg', title: 'Зона активных\nигр' },
-      { image: '/images/easton/kids-3.jpg', title: 'Место для творчества\nи отдыха' },
-      { image: '/images/easton/kids-4.jpg' },
+      { image: '/images/easton/kids-1.webp', title: 'Безопасные\nматериалы' },
+      { image: '/images/easton/kids-2.webp', title: 'Зона активных\nигр' },
+      { image: '/images/easton/kids-3.webp', title: 'Место для творчества\nи отдыха' },
+      { image: '/images/easton/kids-4.webp' },
     ],
     roomLabel: 'Kids Room',
     roomTitle: 'Kids Room Easton - уютное и тёплое пространство для детей',
@@ -86,7 +86,7 @@ export const EASTON = {
     title: 'Холлы комплекса - сочетание элегантности и современного стиля',
     text1: 'Оформление выполнено с вниманием к свету и пропорциям, создавая атмосферу уюта и премиального комфорта.',
     text2: 'Такое оформление отражает высокий уровень жизни и безупречный вкус, превращая холлы не просто в зону ожидания, а в пространство эстетического и эмоционального комфорта.',
-    image: '/images/easton/hall.jpg',
+    image: '/images/easton/hall.webp',
     features: [
       'Дизайнерские входные группы',
       'Просторные холлы премиум-класса',
@@ -99,7 +99,7 @@ export const EASTON = {
     label: 'Квартиры',
     title: 'Каждая квартира - это пространство комфорта, функциональности и современного стиля',
     text: 'Высокие потолки создают ощущение лёгкости, а планировки позволяют использовать каждый метр максимально эффективно.',
-    image: '/images/easton/apartments.jpg',
+    image: '/images/easton/apartments.webp',
     cta: 'Получить консультацию',
     features: [
       'Face ID-домофоны - вход без ключей и карт',
@@ -111,7 +111,7 @@ export const EASTON = {
   parking: {
     label: 'Паркинг',
     title: 'Паркинг Easton - сочетание удобства, безопасности и продуманной организации',
-    image: '/images/easton/parking.jpg',
+    image: '/images/easton/parking.webp',
     points: [
       'Подземный паркинг защищён от внешних воздействий и доступен в любое время года.',
       'Въезд осуществляется по системе контроля доступа - исключено попадание посторонних.',
@@ -122,7 +122,7 @@ export const EASTON = {
   boxroom: {
     label: 'BoxRoom',
     title: 'Boxroom - персональные кладовые помещения для хранения',
-    image: '/images/easton/boxroom.jpg',
+    image: '/images/easton/boxroom.webp',
     text: 'Продуманное решение для велосипедов, колясок, сезонных вещей и спортинвентаря. Всё, что создаёт порядок и удобство в вашей квартире, теперь имеет своё место.',
   },
   consult: {
