@@ -1,10 +1,13 @@
 import { FEATURED_DATA } from '../data/projects';
+import { projectHash, projectSlugFromName } from '../data/projectPages';
 import { fmt } from '../utils/format';
 
 const TAB_NAMES = ['Central Park', 'Avenue Park', 'Adal Town'];
 
 export default function Featured({ activeTab, setActiveTab }) {
   const featured = FEATURED_DATA[activeTab];
+  const slug = projectSlugFromName(activeTab);
+  const detailHref = slug ? projectHash(slug) : '#';
 
   return (
     <section className="section featured">
@@ -44,7 +47,15 @@ export default function Featured({ activeTab, setActiveTab }) {
         ))}
       </div>
       <div>
-        <a href="#" className="btn-primary">
+        <a
+          href={detailHref}
+          className="btn-primary"
+          onClick={(e) => {
+            if (!slug) return;
+            e.preventDefault();
+            window.location.hash = projectHash(slug);
+          }}
+        >
           Подробнее
         </a>
       </div>

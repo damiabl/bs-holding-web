@@ -1,8 +1,13 @@
 export const EASTON = {
+  slug: 'easton',
   name: 'Easton',
   city: 'Усть-Каменогорск',
   phone: '8 775 386 40 10',
   phoneHref: 'tel:+87753864010',
+  theme: {
+    accent: '#61D0C5',
+    accentDark: '#1F6059',
+  },
   nav: [
     { label: 'Расположение', href: '#easton-location' },
     { label: 'Архитектура', href: '#easton-architecture' },
@@ -17,7 +22,7 @@ export const EASTON = {
     label: 'О жилом комплексе',
     text: 'Easton - первый проект компании BS Holding в городе Усть-Каменогорск. Новый символ современного города, в котором соединяются архитектура, комфорт и стиль жизни.',
     stats: [
-      { icon: '/images/easton/icon-key.svg', text: 'Срок сдачи: 4 квартал 2026 года' },
+      { icon: '/images/easton/icon-key.svg', text: 'Срок сдачи: 2027 год' },
       { icon: '/images/easton/icon-building.svg', text: 'Всего 208 квартир в I очереди' },
     ],
   },
@@ -36,7 +41,7 @@ export const EASTON = {
     label: 'Локация',
     title: 'Пересечение улиц Есенберлина\nи Сәтпаева - новое сердце города',
     cards: [
-      { image: null, title: 'CarCity', solid: true, icon: '/images/easton/icon-car.webp' },
+      { image: '/images/easton/location-sport.webp', title: 'Спорткомплекс', icon: '/images/easton/icon-building.svg' },
       { image: '/images/easton/location-theatre.webp', title: 'Театр', icon: '/images/easton/icon-theatre.webp' },
       { image: '/images/easton/location-park.webp', title: 'Парк Нурлы Жол', icon: '/images/easton/icon-park.webp' },
     ],
@@ -52,8 +57,7 @@ export const EASTON = {
     image: '/images/easton/architecture.webp',
     points: [
       'Монолитный каркас обеспечивает прочность и долговечность всего жилого здания.',
-      'Фасады облицованы: натуральным камнем Limestone, благородным гранитом, алюминиевыми композитными панелями (АКП).',
-      'Сочетание каменных и алюминиевых поверхностей создаёт баланс элегантности и динамики, сохраняя при этом монументальность и премиальность фасада.',
+      'Современный вентилируемый фасад из алюминиевых композитных панелей с утеплением из минеральной ваты не только подчёркивает архитектуру комплекса, но и обеспечивает дополнительную тепло- и шумоизоляцию, а также повышенную пожарную безопасность.',
     ],
     ctaQuestion: 'Желаете лично оценить качество материалов Easton?',
     ctaButton: 'Записаться на экскурсию',
@@ -87,6 +91,12 @@ export const EASTON = {
     text1: 'Оформление выполнено с вниманием к свету и пропорциям, создавая атмосферу уюта и премиального комфорта.',
     text2: 'Такое оформление отражает высокий уровень жизни и безупречный вкус, превращая холлы не просто в зону ожидания, а в пространство эстетического и эмоционального комфорта.',
     image: '/images/easton/hall.webp',
+    gallery: [
+      { image: '/images/easton/hall-2.webp' },
+      { image: '/images/easton/hall-3.webp' },
+      { image: '/images/easton/hall-4.webp' },
+      { image: '/images/easton/hall-5.webp' },
+    ],
     features: [
       'Дизайнерские входные группы',
       'Просторные холлы премиум-класса',
@@ -113,7 +123,7 @@ export const EASTON = {
     title: 'Паркинг Easton - сочетание удобства, безопасности и продуманной организации',
     image: '/images/easton/parking.webp',
     points: [
-      'Подземный паркинг защищён от внешних воздействий и доступен в любое время года.',
+      'Наземный крытый паркинг защищён от внешних воздействий и доступен в любое время года.',
       'Въезд осуществляется по системе контроля доступа - исключено попадание посторонних.',
       'Прямой выход из паркинга в жилые этажи на лифте.',
     ],
@@ -135,7 +145,7 @@ export const EASTON = {
   },
   footer: {
     cols: [
-      { title: 'Проекты', items: ['Central Park', 'Avenue Park', 'Adal Town', 'Orda Palace', 'White Hill'] },
+      { title: 'Проекты', items: ['Central Park', 'Avenue Park', 'Adal Town', 'Orda Palace', 'Easton', 'White Hill'] },
       { title: 'Компания', items: ['О Компании', 'Инвесторам', 'Карьера', 'Коммерческие помещения', 'BS Пайда'] },
       { title: 'Поддержка', items: ['Контакты'] },
       { title: 'Общее', items: ['График работы:\nЕжедневно с 09:00 по 19:00'] },

@@ -81,7 +81,7 @@ export default function Header({
             <span className="site-header__promo-text">
               Рассрочка на жилой комплекс White Hill начинается с 23 января
             </span>
-            <a href="#paida" className="site-header__promo-link" onClick={closeMobile}>
+            <a href="#/white-hill" className="site-header__promo-link" onClick={closeMobile}>
               Подробнее →
             </a>
           </div>

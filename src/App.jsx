@@ -11,14 +11,18 @@ import Commercial from './components/Commercial';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer';
 import CallPopup from './components/CallPopup';
-import EastonPage from './pages/EastonPage';
+import ProjectPage from './pages/ProjectPage';
 import { DEFAULT_FILTER, PROJECTS } from './data/projects';
+import { getProjectPage, projectHash } from './data/projectPages';
 import { filterProjects, nameOk, phoneOk } from './utils/format';
 
 function getRoute() {
   const hash = window.location.hash.replace(/^#\/?/, '');
-  if (hash === 'easton' || hash.startsWith('easton')) return 'easton';
-  return 'home';
+  const slug = hash.split(/[/?#]/)[0]?.toLowerCase();
+  if (slug && getProjectPage(slug)) {
+    return { type: 'project', slug };
+  }
+  return { type: 'home' };
 }
 
 export default function App() {
@@ -55,15 +59,20 @@ export default function App() {
 
   const goHome = useCallback(() => {
     window.location.hash = '';
-    setRoute('home');
+    setRoute({ type: 'home' });
     window.scrollTo(0, 0);
   }, []);
 
-  const goEaston = useCallback(() => {
-    window.location.hash = '/easton';
-    setRoute('easton');
+  const goProject = useCallback((slug) => {
+    const page = getProjectPage(slug);
+    if (!page) {
+      goHome();
+      return;
+    }
+    window.location.hash = projectHash(slug);
+    setRoute({ type: 'project', slug });
     window.scrollTo(0, 0);
-  }, []);
+  }, [goHome]);
 
   const toggleMenu = useCallback((key) => {
     setOpenMenu((prev) => (prev === key ? null : key));
@@ -134,10 +143,8 @@ export default function App() {
   }, [consultName, consultPhone]);
 
   const onOpenProject = useCallback((p) => {
-    if (p.name === 'Easton' || p.href === '#/easton') {
-      goEaston();
-    }
-  }, [goEaston]);
+    if (p.slug) goProject(p.slug);
+  }, [goProject]);
 
   const callPopup = (
     <CallPopup
@@ -151,10 +158,20 @@ export default function App() {
     />
   );
 
-  if (route === 'easton') {
+  if (route.type === 'project') {
+    const projectData = getProjectPage(route.slug);
+    if (!projectData) {
+      return null;
+    }
     return (
       <>
-        <EastonPage onBack={goHome} onOpenCall={openCall} />
+        <ProjectPage
+          key={projectData.slug}
+          data={projectData}
+          onBack={goHome}
+          onOpenCall={openCall}
+          onNavigateProject={goProject}
+        />
         {callPopup}
       </>
     );

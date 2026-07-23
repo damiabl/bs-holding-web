@@ -1,4 +1,5 @@
 import { FOOTER_COLS, SOCIALS } from '../data/projects';
+import { projectHash, projectSlugFromName } from '../data/projectPages';
 import Logo from './Logo';
 
 export default function Footer() {
@@ -11,11 +12,15 @@ export default function Footer() {
             <div key={col.title} className="site-footer__col">
               <div className="site-footer__col-title">{col.title}</div>
               <div className="site-footer__links">
-                {col.items.map((i) => (
-                  <a key={i} href="#">
-                    {i}
-                  </a>
-                ))}
+                {col.items.map((item) => {
+                  const slug = col.title === 'Проекты' ? projectSlugFromName(item) : null;
+                  const href = slug ? projectHash(slug) : '#';
+                  return (
+                    <a key={item} href={href}>
+                      {item}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           ))}

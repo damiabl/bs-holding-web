@@ -3,17 +3,12 @@ import { FILTER_SPEC } from '../data/projects';
 import { fmt } from '../utils/format';
 
 function ProjectCard({ p, onOpen }) {
-  const clickable = Boolean(p.href || onOpen);
+  const clickable = Boolean(p.slug || p.href);
   const Wrapper = clickable ? 'button' : 'div';
   const wrapperProps = clickable
     ? {
         type: 'button',
-        onClick: () => {
-          if (p.href?.startsWith('#/')) {
-            window.location.hash = p.href.slice(1);
-          }
-          onOpen?.(p);
-        },
+        onClick: () => onOpen?.(p),
         className: 'project-card project-card--btn',
       }
     : { className: 'project-card' };
@@ -35,7 +30,7 @@ function ProjectCard({ p, onOpen }) {
           ))}
         </div>
       </div>
-      <div className="project-card__price">от {fmt(p.price)} ₸</div>
+      {p.price != null && <div className="project-card__price">от {fmt(p.price)} ₸</div>}
     </Wrapper>
   );
 }
